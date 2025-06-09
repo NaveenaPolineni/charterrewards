@@ -27,6 +27,14 @@ public class RewardsController {
         this.rewardsService = rewardsService;
     }
 
+    /**
+     * Retrieves rewards for a customer based on their ID and optional date range.
+     *
+     * @param customerId the ID of the customer
+     * @param startDate  the start date of the date range (optional)
+     * @param endDate    the end date of the date range (optional)
+     * @return ResponseEntity containing CustomerRewards details
+     */
     @GetMapping("/api/v1/customers/{customerId}/rewards")
     public ResponseEntity<CustomerRewards> getRewardsForCustomer(
             @PathVariable Long customerId,

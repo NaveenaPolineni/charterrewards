@@ -28,6 +28,12 @@ public class TransactionsController {
         this.transactionService = transactionService;
     }
 
+    /**
+     * Creates a new retail transaction.
+     *
+     * @param request the details of the transaction to create
+     * @return ResponseEntity containing the created transaction and its location
+     */
     @PostMapping("/api/v1/transactions")
     public ResponseEntity<RetailTransaction> createTransaction(@Valid @RequestBody RetailTransaction request) {
 
@@ -39,6 +45,12 @@ public class TransactionsController {
 
     }
 
+    /**
+     * Retrieves all transactions for a specific customer by their ID.
+     *
+     * @param customerId the ID of the customer whose transactions to retrieve
+     * @return ResponseEntity containing a list of RetailTransaction objects
+     */
     @GetMapping("/api/v1/customers/{customerId}/transactions")
     public ResponseEntity<List<RetailTransaction>> getTransactionsByCustomerId(@PathVariable Long customerId) {
 
@@ -47,6 +59,12 @@ public class TransactionsController {
         return ResponseEntity.ok(transactions);
     }
 
+    /**
+     * Deletes a transaction by its ID.
+     *
+     * @param transactionId the ID of the transaction to delete
+     * @return ResponseEntity indicating the result of the deletion
+     */
     @DeleteMapping("/api/v1/transactions/{transactionId}")
     public ResponseEntity<String> deleteTransactionById(@PathVariable Long transactionId) {
 

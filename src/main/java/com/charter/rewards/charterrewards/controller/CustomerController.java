@@ -28,12 +28,24 @@ public class CustomerController {
         this.customerService = customerService;
     }
 
+    /**
+     * Retrieves a customer by their ID.
+     *
+     * @param customerId the ID of the customer to retrieve
+     * @return ResponseEntity containing the customer details
+     */
     @GetMapping("/api/v1/customers/{customerId}")
     public ResponseEntity<RetailCustomer> getCustomerById(@PathVariable Long customerId) {
         RetailCustomer customer = customerService.getCustomerById(customerId);
         return ResponseEntity.ok(customer);
     }
 
+    /**
+     * Creates a new customer.
+     *
+     * @param customerRequest the details of the customer to create
+     * @return ResponseEntity containing the created customer and its location
+     */
     @PostMapping("/api/v1/customers")
     public ResponseEntity<RetailCustomer> createCustomer(@Valid @RequestBody RetailCustomer customerRequest) {
         RetailCustomer customer = customerService.createCustomer(customerRequest);
@@ -42,6 +54,12 @@ public class CustomerController {
         return ResponseEntity.created(customerResourceLocation).body(customer);
     }
 
+    /**
+     * Deletes a customer by their ID.
+     *
+     * @param customerId the ID of the customer to delete
+     * @return ResponseEntity indicating the deletion status
+     */
     @DeleteMapping("/api/v1/customers/{customerId}")
     public ResponseEntity<String> deleteCustomerById(@PathVariable Long customerId) {
         customerService.deleteCustomerById(customerId);
