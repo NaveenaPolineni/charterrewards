@@ -1,0 +1,827 @@
+{
+	"info": {
+		"_postman_id": "bd514dd5-0536-4839-9b5f-5814cdddd1d4",
+		"name": "Rewards_application",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45719825",
+		"_collection_link": "https://naveena-8695481.postman.co/workspace/Naveena's-Workspace~00869371-a1bf-4fd2-82a1-552604b10d7b/collection/45719825-bd514dd5-0536-4839-9b5f-5814cdddd1d4?action=share&source=collection_link&creator=45719825"
+	},
+	"item": [
+		{
+			"name": "Create New Customer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Charter\",\n    \"lastName\": \"Communications\",\n    \"email\": \"chartercommunications@test.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/customers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"customers"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create New Customer",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Charter\",\n    \"lastName\": \"Communications\",\n    \"email\": \"chartercommunications@test.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/customers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"customers"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Location",
+							"value": "/customers/3"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 09 Jun 2025 07:32:46 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"customerId\": 3,\n    \"firstName\": \"Charter\",\n    \"lastName\": \"Communications\",\n    \"email\": \"chartercommunications@test.com\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Customer By ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/customers/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"customers",
+						"3"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Customer By ID",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/customers/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"customers",
+								"3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 09 Jun 2025 07:33:00 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"customerId\": 3,\n    \"firstName\": \"Charter\",\n    \"lastName\": \"Communications\",\n    \"email\": \"chartercommunications@test.com\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Customer by Id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/customers/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"customers",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete Customer by Id",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/customers/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"customers",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "40"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 09 Jun 2025 00:07:39 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Customer with ID: 1 deleted successfully"
+				}
+			]
+		},
+		{
+			"name": "Create a New Transaction",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"customerId\": 2,\n    \"amount\": 152.00,\n    \"purchaseDate\": \"2025-06-08\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/transactions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"transactions"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create a New Transaction",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customerId\": 2,\n    \"amount\": 152.00,\n    \"purchaseDate\": \"2025-06-08\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/transactions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"transactions"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Location",
+							"value": "/customers/2/transactions/8"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 09 Jun 2025 07:36:33 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"transactionId\": 8,\n    \"purchaseDate\": \"2025-06-08\",\n    \"customerId\": 2,\n    \"amount\": 152\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Transactions by CustomerId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/customers/2/transactions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customers",
+						"2",
+						"transactions"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Transactions by CustomerId",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/customers/1/transactions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"customers",
+								"1",
+								"transactions"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 09 Jun 2025 06:23:56 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"transactionId\": 1,\n        \"purchaseDate\": \"2025-06-05\",\n        \"customerId\": 1,\n        \"amount\": 85.45\n    },\n    {\n        \"transactionId\": 2,\n        \"purchaseDate\": \"2025-06-05\",\n        \"customerId\": 1,\n        \"amount\": 143.25\n    },\n    {\n        \"transactionId\": 3,\n        \"purchaseDate\": \"2025-05-05\",\n        \"customerId\": 1,\n        \"amount\": 112\n    },\n    {\n        \"transactionId\": 4,\n        \"purchaseDate\": \"2025-05-09\",\n        \"customerId\": 1,\n        \"amount\": 52\n    },\n    {\n        \"transactionId\": 5,\n        \"purchaseDate\": \"2025-04-23\",\n        \"customerId\": 1,\n        \"amount\": 182\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Delete Transaction by Id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/transactions/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"transactions",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete Transaction by Id",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/transactions/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"transactions",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "43"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 09 Jun 2025 00:19:18 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Transaction with ID: 1 deleted successfully"
+				}
+			]
+		},
+		{
+			"name": "Get Rewards by Customer Id without date range",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/customer/1/rewards?startDate=2025-04-01&&endDate=2025-05-09",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customer",
+						"1",
+						"rewards"
+					],
+					"query": [
+						{
+							"key": "startDate",
+							"value": "2025-04-01"
+						},
+						{
+							"key": null,
+							"value": null
+						},
+						{
+							"key": "endDate",
+							"value": "2025-05-09"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Rewards by Customer Id without date range",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/customers/1/rewards",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"customers",
+								"1",
+								"rewards"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 09 Jun 2025 07:39:12 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"customerId\": 1,\n    \"firstName\": \"Naveena\",\n    \"lastName\": \"Polineni\",\n    \"totalRewardsPoints\": 461,\n    \"monthlyTransactions\": [\n        {\n            \"month\": \"JUNE\",\n            \"totalMonthlyRewardsPoints\": 171,\n            \"transactions\": [\n                {\n                    \"purchaseDate\": \"2025-06-05\",\n                    \"amount\": 85.45\n                },\n                {\n                    \"purchaseDate\": \"2025-06-05\",\n                    \"amount\": 143.25\n                }\n            ]\n        },\n        {\n            \"month\": \"MAY\",\n            \"totalMonthlyRewardsPoints\": 76,\n            \"transactions\": [\n                {\n                    \"purchaseDate\": \"2025-05-05\",\n                    \"amount\": 112\n                },\n                {\n                    \"purchaseDate\": \"2025-05-09\",\n                    \"amount\": 52\n                }\n            ]\n        },\n        {\n            \"month\": \"APRIL\",\n            \"totalMonthlyRewardsPoints\": 214,\n            \"transactions\": [\n                {\n                    \"purchaseDate\": \"2025-04-23\",\n                    \"amount\": 182\n                }\n            ]\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Rewards by Customer Id with date range",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/customer/1/rewards?startDate=2025-04-01&endDate=2025-05-09",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customer",
+						"1",
+						"rewards"
+					],
+					"query": [
+						{
+							"key": "startDate",
+							"value": "2025-04-01"
+						},
+						{
+							"key": "endDate",
+							"value": "2025-05-09"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Rewards by Customer Id with date range",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/customers/1/rewards?startDate=2025-04-01&endDate=2025-05-09",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"customers",
+								"1",
+								"rewards"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "2025-04-01"
+								},
+								{
+									"key": "endDate",
+									"value": "2025-05-09"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 09 Jun 2025 07:39:45 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"customerId\": 1,\n    \"firstName\": \"Naveena\",\n    \"lastName\": \"Polineni\",\n    \"totalRewardsPoints\": 290,\n    \"monthlyTransactions\": [\n        {\n            \"month\": \"MAY\",\n            \"totalMonthlyRewardsPoints\": 76,\n            \"transactions\": [\n                {\n                    \"purchaseDate\": \"2025-05-05\",\n                    \"amount\": 112\n                },\n                {\n                    \"purchaseDate\": \"2025-05-09\",\n                    \"amount\": 52\n                }\n            ]\n        },\n        {\n            \"month\": \"APRIL\",\n            \"totalMonthlyRewardsPoints\": 214,\n            \"transactions\": [\n                {\n                    \"purchaseDate\": \"2025-04-23\",\n                    \"amount\": 182\n                }\n            ]\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Rewards by Customer Id with just End Date",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/customer/1/rewards?startDate=2025-04-01&&endDate=2025-05-09",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customer",
+						"1",
+						"rewards"
+					],
+					"query": [
+						{
+							"key": "startDate",
+							"value": "2025-04-01"
+						},
+						{
+							"key": null,
+							"value": null
+						},
+						{
+							"key": "endDate",
+							"value": "2025-05-09"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Rewards by Customer Id with just endDate",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/customers/2/rewards?endDate=2025-05-01",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"customers",
+								"2",
+								"rewards"
+							],
+							"query": [
+								{
+									"key": "endDate",
+									"value": "2025-05-01"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 09 Jun 2025 07:41:34 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"customerId\": 2,\n    \"firstName\": \"Sai\",\n    \"lastName\": \"Polineni\",\n    \"totalRewardsPoints\": 114,\n    \"monthlyTransactions\": [\n        {\n            \"month\": \"MARCH\",\n            \"totalMonthlyRewardsPoints\": 114,\n            \"transactions\": [\n                {\n                    \"purchaseDate\": \"2025-03-23\",\n                    \"amount\": 132\n                }\n            ]\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Rewards By Customer with Just start Date",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/customer/2/rewards?startDate=2025-01-01",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customer",
+						"2",
+						"rewards"
+					],
+					"query": [
+						{
+							"key": "startDate",
+							"value": "2025-01-01"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Rewards By Customer with Just start Date",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/customers/2/rewards?startDate=2025-01-01",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"customers",
+								"2",
+								"rewards"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "2025-01-01"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 09 Jun 2025 07:43:04 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"customerId\": 2,\n    \"firstName\": \"Sai\",\n    \"lastName\": \"Polineni\",\n    \"totalRewardsPoints\": 310,\n    \"monthlyTransactions\": [\n        {\n            \"month\": \"JUNE\",\n            \"totalMonthlyRewardsPoints\": 154,\n            \"transactions\": [\n                {\n                    \"purchaseDate\": \"2025-06-08\",\n                    \"amount\": 152\n                }\n            ]\n        },\n        {\n            \"month\": \"JANUARY\",\n            \"totalMonthlyRewardsPoints\": 42,\n            \"transactions\": [\n                {\n                    \"purchaseDate\": \"2025-01-17\",\n                    \"amount\": 92\n                }\n            ]\n        },\n        {\n            \"month\": \"MARCH\",\n            \"totalMonthlyRewardsPoints\": 114,\n            \"transactions\": [\n                {\n                    \"purchaseDate\": \"2025-03-23\",\n                    \"amount\": 132\n                }\n            ]\n        }\n    ]\n}"
+				}
+			]
+		}
+	]
+}
