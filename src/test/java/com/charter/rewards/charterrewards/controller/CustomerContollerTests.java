@@ -1,21 +1,25 @@
 package com.charter.rewards.charterrewards.controller;
 
-import com.charter.rewards.charterrewards.dto.RetailCustomer;
-import com.charter.rewards.charterrewards.exception.CustomerNotFoundException;
-import com.charter.rewards.charterrewards.service.CustomerService;
-
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import static org.mockito.ArgumentMatchers.any;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
-import static org.mockito.ArgumentMatchers.any;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.header;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import com.charter.rewards.charterrewards.dto.RetailCustomer;
+import com.charter.rewards.charterrewards.exception.CustomerNotFoundException;
+import com.charter.rewards.charterrewards.service.CustomerService;
 
 @WebMvcTest(CustomerController.class)
 public class CustomerContollerTests {
@@ -106,6 +110,7 @@ public class CustomerContollerTests {
     }
 
     @Test
+    @DisplayName("Will return 200 when customer is deleted successfully")
     void testDeleteCustomerById() throws Exception {
         Mockito.doNothing().when(customerService).deleteCustomerById(3L);
 

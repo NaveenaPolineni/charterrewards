@@ -1,25 +1,28 @@
 package com.charter.rewards.charterrewards.controller;
 
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import com.charter.rewards.charterrewards.dto.CustomerRewards;
-import com.charter.rewards.charterrewards.dto.MonthlyTransactions;
-import com.charter.rewards.charterrewards.exception.CustomerNotFoundException;
-import com.charter.rewards.charterrewards.service.RewardsService;
-
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.http.MediaType;
-import org.springframework.test.web.servlet.MockMvc;
 import java.time.LocalDate;
 import java.util.List;
 
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
+import org.mockito.Mockito;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.http.MediaType;
+import org.springframework.test.web.servlet.MockMvc;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
+import com.charter.rewards.charterrewards.dto.CustomerRewards;
+import com.charter.rewards.charterrewards.dto.MonthlyTransactions;
+import com.charter.rewards.charterrewards.exception.CustomerNotFoundException;
+import com.charter.rewards.charterrewards.exception.InvalidArgumentsException;
+import com.charter.rewards.charterrewards.service.RewardsService;
 
 @WebMvcTest(RewardsController.class)
 public class RewardsControllerTest {
@@ -97,20 +100,28 @@ public class RewardsControllerTest {
                                 .andExpect(status().isBadRequest());
         }
 
+        @Test
         @DisplayName("Returns 400 when startDate is in the future")
         void testGetRewardsForCustomerFutureStartDate() throws Exception {
                 LocalDate futureDate = LocalDate.now().plusDays(1);
-                mockMvc.perform(get("/api/v1/customer/3/rewards")
+                Mockito.when(rewardsService.getRewardsForCustomer(eq(3L), any(), any()))
+                                .thenThrow(new InvalidArgumentsException(
+                                                "Future dates are not allowed. startDate provided should be in the past or today."));
+                mockMvc.perform(get("/api/v1/customers/3/rewards")
                                 .param("startDate", futureDate.toString()))
                                 .andExpect(status().isBadRequest())
                                 .andExpect(content()
                                                 .string("Future dates are not allowed. startDate provided should be in the past or today."));
         }
 
+        @Test
         @DisplayName("Returns 400 when endDate is in the future")
         void testGetRewardsForCustomerFutureEndDate() throws Exception {
                 LocalDate futureDate = LocalDate.now().plusDays(1);
-                mockMvc.perform(get("/api/v1/customer/3/rewards")
+                Mockito.when(rewardsService.getRewardsForCustomer(eq(3L), any(), any()))
+                                .thenThrow(new InvalidArgumentsException(
+                                                "Future dates are not allowed. endDate provided should be in the past or today."));
+                mockMvc.perform(get("/api/v1/customers/3/rewards")
                                 .param("endDate", futureDate.toString()))
                                 .andExpect(status().isBadRequest())
                                 .andExpect(content()
